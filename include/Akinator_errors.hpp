@@ -5,6 +5,8 @@
 #define RED(str) 		"\033[31;1m" str "\033[0m"
 #define YELLOW(str) 	"\033[33;4m" str "\033[0m"
 #define GREEN(str) 		"\033[32;6m" str "\033[0m"
+#define BLUE(str)		"\033[34;1m" str "\033[0m"
+#define TEAL(str)		"\033[36;1m" str "\033[0m"
 
 #define TREE_ERROR_CHECK(status) {																					 \
 	if (status != TREE_NO_ERROR) {																					\

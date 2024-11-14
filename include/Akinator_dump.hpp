@@ -11,12 +11,18 @@
 #define CSS_FILE_		DUMP_DIR_ "styles.css"
 #define BASH_FILE_		DUMP_DIR_ "script.bash"
 
-#define IMG_EXTENSION 	".png"
+#define IMG_EXTENSION 	"svg"
 
 #ifdef __APPLE__
 	#define OPEN	"open "
 #else
 	#define OPEN	"xdg-open "
+#endif
+
+#ifdef UNKNOWN_WHAT_IN_TREE
+	#define UNKNOWN_WHAT_(...) __VA_ARGS__
+#else
+	#define UNKNOWN_WHAT_(...) NULL
 #endif
 
 struct DumpLogInfo {

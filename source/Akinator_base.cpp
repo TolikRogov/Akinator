@@ -95,7 +95,7 @@ BinaryTreeStatusCode AkinatorReadBase(Tree* tree) {
 
 	char cur_node[NODE_DATA_MAX_LENGTH] = {};
 	fscanf(base_file, "\"%[^\"]\"", cur_node);
-	tree->root = CreateNode(cur_node, NULL, tree->root, NULL);
+	tree->root = CreateNode(cur_node, NULL, UNKNOWN_WHAT_(tree->root), NULL);
 	for (int i = 0; i < StrLen(cur_node); i++)
 		tree->root->data[i] = cur_node[i];
 

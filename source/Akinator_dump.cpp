@@ -192,7 +192,7 @@ BinaryTreeStatusCode BinaryTreeBashScript(Tree* tree, DumpLogInfo dump_info) {
 	BASH_PRINTF("#!/bin/bash\n");
 
 	BASH_PRINTF("script_num=%zu;\\\n", script_num);
-	BASH_PRINTF("dot " DOT_FILE_ " -Tpng -o " DUMP_DIR_ IMG_FILE_ "$script_num" IMG_EXTENSION ";\n");
+	BASH_PRINTF("dot " DOT_FILE_ " -T" IMG_EXTENSION " -o " DUMP_DIR_ IMG_FILE_ "$script_num" "." IMG_EXTENSION ";\n");
 
 #undef BASH_PRINTF
 
@@ -218,7 +218,7 @@ BinaryTreeStatusCode BinaryTreeBashScript(Tree* tree, DumpLogInfo dump_info) {
 
 	HTML_PRINTF("\t<div class='dump'>\n");
 	HTML_PRINTF("\tDUMP #%zu: function %s was called from %s: %zu\n", script_num, dump_info.func, dump_info.file, dump_info.line);
-	HTML_PRINTF("\t<img src='%s%zu%s' class='img'></div>\n\n", IMG_FILE_, script_num++, IMG_EXTENSION);
+	HTML_PRINTF("\t<img src='%s%zu.%s' class='img'></div>\n\n", IMG_FILE_, script_num++, IMG_EXTENSION);
 
 #undef HTML_PRINTF
 

@@ -2,6 +2,38 @@
 
 char TREE_DUMP = TREE_FIRST_RUN;
 
+BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree) {
+
+	AkinatorAskAboutNode(tree->root);
+
+	return TREE_NO_ERROR;
+}
+
+BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node) {
+
+	if (!node) {
+		printf(RED("Sorry, I dont know what you made!")"\n");
+		return TREE_NO_ERROR;
+	}
+
+	printf(TEAL("This %s?") " [y/n]\n", node->data);
+	int c = getchar();
+	if (c != '\n') getchar();
+	if (c == 'y') {
+		if (!node->left) {
+			printf(GREEN("I always know!") "\n");
+			return TREE_NO_ERROR;
+		}
+		AkinatorAskAboutNode(node->left);
+	}
+	else if (c == 'n')
+		AkinatorAskAboutNode(node->right);
+	else
+		AkinatorAskAboutNode(node);
+
+	return TREE_NO_ERROR;
+}
+
 BinaryTreeStatusCode TreeCtor(Tree* tree) {
 
 	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;

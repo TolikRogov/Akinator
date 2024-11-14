@@ -7,7 +7,19 @@
 				{"Magic"}
 				{"Ovchos"}
 			}
-			{"Chubarik"}
+			{"Teaches angem"
+				{"Chubarik"}
+				{"Do sport"
+					{"Coach"
+						{"Valentin Guardiola"}
+						{"IN KARTEL"
+							{"LEGEND"}
+							{"LX"}
+						}
+					}
+					{"Kvadrober"}
+				}
+			}
 		}
 	}
 }

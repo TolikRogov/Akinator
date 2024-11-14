@@ -10,6 +10,7 @@ set (RELEASE_FLAGS -std=c++17)
 
 set (DEBUG OFF)
 set (HTML ON)
+set (UNKNOWN_WHAT OFF)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -19,6 +20,10 @@ endif()
 
 if (${HTML})
 	add_compile_definitions(HTML_OPEN)
+endif()
+
+if (${UNKNOWN_WHAT})
+	add_compile_definitions(UNKNOWN_WHAT_IN_TREE)
 endif()
 
 add_executable(${PROJECT_NAME})
