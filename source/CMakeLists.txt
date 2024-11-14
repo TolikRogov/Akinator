@@ -3,4 +3,5 @@ target_sources (${PROJECT_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/Akinator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Akinator_errors.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/Akinator_dump.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Akinator_base.cpp
 )

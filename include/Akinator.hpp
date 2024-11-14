@@ -2,9 +2,11 @@
 
 #include <stdlib.h>
 #include <dirent.h>
+#include <string.h>
+#include <ctype.h>
 #include "Akinator_errors.hpp"
 
-typedef const char* Data_t;
+typedef char* Data_t;
 
 #define INIT_TREE(tree) Tree tree = {.info = {.name = #tree, .file_name = __FILE__, .line = __LINE__}};
 
@@ -67,5 +69,5 @@ BinaryTreeStatusCode BinaryTreeHtmlDumpFinish();
 
 BinaryTreeStatusCode TreeDtor(Node_t* node);
 
-Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right);
+Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent);
 

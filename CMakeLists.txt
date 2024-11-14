@@ -9,7 +9,7 @@ set (DEBUG_FLAGS   -std=c++17 -ggdb3 -O3 -Wall -Wextra -Weffc++ -Wc++14-compat -
 set (RELEASE_FLAGS -std=c++17)
 
 set (DEBUG OFF)
-set (HTML ON)
+set (HTML OFF)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 

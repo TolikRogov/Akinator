@@ -1,5 +1,5 @@
 #include "Akinator_dump.hpp"
-#include "Akinator.hpp"
+#include "Akinator_base.hpp"
 
 int main() {
 
@@ -9,18 +9,9 @@ int main() {
 
 	TREE_CTOR(&tree);
 
-	Node_t* node1 = CreateNode("Полторашка", NULL, NULL);
-	Node_t* node2 = CreateNode("Бурцев", NULL, NULL);
-	Node_t* node3 = CreateNode("Колдунов", NULL, NULL);
-	Node_t* node4 = CreateNode("Овчос", NULL, NULL);
-	Node_t* node5 = CreateNode("Чубаров", NULL, NULL);
-	Node_t* node6 = CreateNode("Нефор", node3, node4);
-	Node_t* node7 = CreateNode("Ведёт физос", node6, node5);
-	Node_t* node8 = CreateNode("Ведёт дискру", node2, node7);
-	Node_t* nodeRoot = CreateNode("Животное", node1, node8);
-	tree.root = nodeRoot;
-
-	BINARY_TREE_GRAPH_DUMP(&tree, "Start", node4);
+	BINARY_TREE_GRAPH_DUMP(&tree, "Start", NULL);
+	AKINATOR_READ_BASE(&tree);
+	BINARY_TREE_GRAPH_DUMP(&tree, "End", NULL);
 
 	TREE_DTOR(tree.root);
 

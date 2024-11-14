@@ -23,3 +23,8 @@ static struct Colors {
 	const char* new_node 							= "\"#F18805\"";
 	const char* new_node_border						= "\"#AF3800\"";
 } color;
+
+static struct Labels {
+	const char* left_sub_arrow 		= "\"Да\"";
+	const char* right_sub_arrow		= "\"Нет\"";
+} labels;
