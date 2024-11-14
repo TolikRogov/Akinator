@@ -3,7 +3,7 @@
 	{"Teaches analisys"
 		{"Burtsev"}
 		{"Teaches physics"
-			{"Nefore"
+			{"Nefor"
 				{"Magic"}
 				{"Ovchos"}
 			}
