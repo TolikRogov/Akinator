@@ -1,13 +1,13 @@
-{"Животное"
-	{"Полторашка"}
-	{"Ведёт дискру"
-		{"Бурцев"}
-		{"Ведёт физос"
-			{"Нефор"
-				{"Колдунов"}
-				{"Овчос"}
+{"Animal"
+	{"Poltorashka"}
+	{"Teaches analisys"
+		{"Burtsev"}
+		{"Teaches physics"
+			{"Nefore"
+				{"Magic"}
+				{"Ovchos"}
 			}
-			{"Чубарик"}
+			{"Chubarik"}
 		}
 	}
 }

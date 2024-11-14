@@ -14,6 +14,7 @@ const char* BinaryTreeErrorsMessenger(BinaryTreeStatusCode status) {
 		case TREE_FILE_CLOSE_ERROR:		return "TREE ERROR - FILE WAS NOT CLOSED";
 		case TREE_DIR_CLOSE_ERROR:		return "TREE ERROR - DIRECTORY WAS NOT CLOSED";
 
+		case TREE_UNDEFINED_ERROR:
 		default: 						return "UNDEFINED ERROR";
 	}
 }
@@ -29,4 +30,15 @@ int StrCmp(const char* str1, const char* str2) {
 			break;
 	}
 	return (*(str1 + i) - *(str2 + i));
+}
+
+int StrLen(const char* str) {
+
+	if (!str)
+		return -1;
+
+	int i = 0;
+	for (; *(str + i) != '\0'; i++) {}
+
+	return i;
 }

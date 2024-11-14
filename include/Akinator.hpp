@@ -61,6 +61,7 @@ enum TreeDumpCheck {
 };
 
 const Data_t UNKNOWN_WHAT = "UNKNOWN WHAT";
+const Data_t NONE 		  = "NONE";
 
 BinaryTreeStatusCode TreeCtor(Tree* tree);
 
@@ -70,4 +71,5 @@ BinaryTreeStatusCode BinaryTreeHtmlDumpFinish();
 BinaryTreeStatusCode TreeDtor(Node_t* node);
 
 Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent);
+BinaryTreeStatusCode IsRootUnknownWhat(Node_t* root);
 

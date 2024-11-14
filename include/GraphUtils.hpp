@@ -22,9 +22,13 @@ static struct Colors {
 	const char* right_edge							= "\"#48E818\"";
 	const char* new_node 							= "\"#F18805\"";
 	const char* new_node_border						= "\"#AF3800\"";
+	const char* unknown_what_node					= "\"#BD3458\"";
+	const char* unknown_what_node_border			= "\"#7b0d1e\"";
+	const char* unknown_what_edge 					= "\"#3d1308\"";
 } color;
 
 static struct Labels {
 	const char* left_sub_arrow 		= "\"Да\"";
 	const char* right_sub_arrow		= "\"Нет\"";
+	const char* unknown_what_arrow  = "\"Если б мы знали, что это такое.\\nМы не знаем, что это такое.\"";
 } labels;

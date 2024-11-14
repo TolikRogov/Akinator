@@ -17,4 +17,6 @@ enum NodeStatus {
 	NODE_STATUS_LOCAL_ROOT,
 };
 
+const size_t NODE_DATA_MAX_LENGTH = 50;
+
 BinaryTreeStatusCode AkinatorReadBase(Tree* tree);

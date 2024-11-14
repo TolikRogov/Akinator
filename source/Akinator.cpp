@@ -33,7 +33,11 @@ BinaryTreeStatusCode TreeDtor(Node_t* node) {
 Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent) {
 
 	Node_t* node = (Node_t*)calloc(1, sizeof(*node));
-	node->data = data;
+
+	int data_size = StrLen(data);
+	node->data = (Data_t)calloc((size_t)data_size + 1, sizeof(char));
+	for (int i = 0; i < data_size; i++) node->data[i] = data[i];
+	node->data[data_size] = '\0';
 
 	if (left)   { node->left = left;   left->parent = node;  }
 	if (right)  { node->right = right; right->parent = node; }
@@ -46,7 +50,6 @@ BinaryTreeStatusCode IsRootUnknownWhat(Node_t* root) {
 
 	if (root->left == NULL && \
 		root->right == NULL && \
-		root->parent == NULL && \
 		StrCmp(root->data, UNKNOWN_WHAT) == 0)
 		return TREE_ROOT_IS_UNKNOWN;
 
