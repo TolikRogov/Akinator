@@ -25,15 +25,17 @@ typedef char* Data_t;
 	TREE_ERROR_CHECK(tree_status);				\
 }
 
-#define TREE_CTOR(tree) {						 \
-	tree_status = TreeCtor(tree);				\
-	TREE_ERROR_CHECK(tree_status);				\
+#define TREE_CTOR(tree) {						 		 \
+	tree_status = TreeCtor(tree);						\
+	TREE_ERROR_CHECK(tree_status);						\
+	BINARY_TREE_GRAPH_DUMP(tree, "TreeCtor", NULL);		\
 }
 
-#define TREE_DTOR(root) {						 \
-	TREE_HTML_DUMP_FINISH();					\
-	tree_status = TreeDtor(root);				\
-	TREE_ERROR_CHECK(tree_status);				\
+#define TREE_DTOR(root) {						 		 \
+	BINARY_TREE_GRAPH_DUMP(&tree, "TreeDtor", NULL); 	\
+	TREE_HTML_DUMP_FINISH();							\
+	tree_status = TreeDtor(root);						\
+	TREE_ERROR_CHECK(tree_status);						\
 }
 
 struct Node_t {
@@ -72,4 +74,5 @@ BinaryTreeStatusCode TreeDtor(Node_t* node);
 
 Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent);
 BinaryTreeStatusCode IsRootUnknownWhat(Node_t* root);
+Node_t* FindTreeRoot(Node_t* node);
 

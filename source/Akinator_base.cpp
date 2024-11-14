@@ -3,6 +3,12 @@
 
 static BinaryTreeStatusCode ReadAndCreateNode(Node_t* node, FILE* base_file) {
 
+	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
+
+	static INIT_TREE(tree);
+	tree.root = FindTreeRoot(node);
+	BINARY_TREE_GRAPH_DUMP(&tree, "ReadAndCreateNode", node);
+
 	int bracket = fgetc(base_file);
 	static int bracket_checker = 1;
 	int space_between_quote_and_bracket = 0;
@@ -14,23 +20,36 @@ static BinaryTreeStatusCode ReadAndCreateNode(Node_t* node, FILE* base_file) {
 		return TREE_NO_ERROR;
 	else
 		TREE_ERROR_CHECK(TREE_BASE_SYNTAX_ERROR);
+
+#ifdef PRINT_DEBUG
 	printf("(%d)%c", bracket, bracket);
+#endif
 
 	char cur_node[NODE_DATA_MAX_LENGTH] = {};
 	fscanf(base_file, "\"%[^\"]\"", cur_node);
-	if (StrLen(cur_node)) printf("\"%s\"", cur_node);
+
+#ifdef PRINT_DEBUG
+	if (*cur_node) printf("\"%s\"", cur_node);
+#endif
 
 	fscanf(base_file, "%*[^{}]%n", &space_between_quote_and_bracket);
 	if (!space_between_quote_and_bracket) {
 		bracket = fgetc(base_file);
+#ifdef PRINT_DEBUG
 		printf("%c(%d)", bracket, bracket);
+#endif
 		bracket_checker--;
 		fscanf(base_file, "%*[^{}]");
 	}
+#ifdef PRINT_DEBUG
 	printf("\n");
+#endif
 
-	if (!*cur_node)
+	if (!*cur_node) {
+		fscanf(base_file, "%*[^{}]");
+		ReadAndCreateNode(node->parent, base_file);
 		return TREE_NO_ERROR;
+	}
 
 	Node_t* new_root = CreateNode(cur_node, NULL, NULL, node);
 
@@ -52,6 +71,9 @@ static BinaryTreeStatusCode ReadAndCreateNode(Node_t* node, FILE* base_file) {
 		TREE_ERROR_CHECK(TREE_BASE_SYNTAX_ERROR);
 
 	if (bracket == '}') {
+#ifdef PRINT_DEBUG
+		printf("before closed bracket: %s\n", cur_node);
+#endif
 		ReadAndCreateNode(node, base_file);
 		return TREE_NO_ERROR;
 	}

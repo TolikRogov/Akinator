@@ -1,7 +1,7 @@
 #pragma once
 
 static struct Colors {
-	const char* dot_background 						= "\"#F1D1D1\"";
+	const char* dot_background 						= "\"#DCDCDC\"";
 	const char* html_background 					= "\"#FFFAFA\"";
 	const char* address 							= "\"#4B0082\"";
 	const char* path 								= "\"#FFA500\"";

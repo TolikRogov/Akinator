@@ -35,7 +35,6 @@ Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent) {
 	Node_t* node = (Node_t*)calloc(1, sizeof(*node));
 
 	int data_size = StrLen(data);
-	printf("Create node: %s(%d)\n", data, *data);
 	node->data = (Data_t)calloc((size_t)data_size + 1, sizeof(char));
 	for (int i = 0; i < data_size; i++) node->data[i] = data[i];
 	node->data[data_size] = '\0';
@@ -55,4 +54,19 @@ BinaryTreeStatusCode IsRootUnknownWhat(Node_t* root) {
 		return TREE_ROOT_IS_UNKNOWN;
 
 	return TREE_NO_ERROR;
+}
+
+Node_t* FindTreeRoot(Node_t* node) {
+
+	static Node_t* Root = node;
+
+	if (!node)
+		return Root;
+
+	if (!node->parent)
+		return Root = node;
+
+	FindTreeRoot(node->parent);
+
+	return Root;
 }

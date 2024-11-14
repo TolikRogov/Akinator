@@ -37,8 +37,10 @@ BinaryTreeStatusCode BinaryTreeHtmlDumpStart() {
 	HTML_PRINTF("\t\t<span style='color: %.7s'>&#11153; left subtree edge</span>\n", color.left_edge + 1);
 	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>right subtree node</div>", color.right_node + 1, color.right_node_border + 1);
 	HTML_PRINTF("\t\t<span style='color: %.7s'>&#11153; right subtree edge</span>\n", color.right_edge + 1);
-	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>root node</div>\n", color.root_node + 1, color.root_node_border + 1);
-	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>new node</div>", color.new_node + 1, color.new_node_border + 1);
+	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>root node</div>", color.root_node + 1, color.root_node_border + 1);
+	HTML_PRINTF("\t\t\t<span style='color: %.7s'>&#11153; unknown what edge</span>\n", color.unknown_what_edge + 1);
+	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>new node</div>\n", color.new_node + 1, color.new_node_border + 1);
+	HTML_PRINTF("\t\t<div class='circle' style='background-color: %.7s; border-color: %.7s;'>unknown what node</div>", color.unknown_what_node + 1, color.unknown_what_node_border + 1);
 	HTML_PRINTF("\t</div>\n\n");
 
 #undef HTML_PRINTF
@@ -119,6 +121,7 @@ BinaryTreeStatusCode BinaryTreeCssFile() {
 			   "\twidth: 90%%;\n"\
 			   "\theight: 70%%;\n"\
 			   "\tobject-fit: contain;\n"\
+			   "\tpadding: 10px 0px 0px 0px;\n"\
 			   "}\n");
 
 #undef CSS_PRINTF
