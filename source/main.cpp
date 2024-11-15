@@ -10,10 +10,12 @@ int main() {
 	AKINATOR_READ_BASE(&tree);
 
 #define PRINTF_HEADER {														 \
-	printf("\n" BLUE("For exit from program enter 'q'") "\n");				\
-	printf(		BLUE("For running guessing mode enter 'g'") "\n");			\
-	printf(		BLUE("For previewing akinator tree enter 't'") "\n");		\
-	printf(		BLUE("For getting definition enter 'd'") "\n");				 \
+	printf("\n-----------------------------------------------------\n");	\
+	printf(BLUE("For exit from program enter 'q'") "\n");					\
+	printf(BLUE("For running guessing mode enter 'g'") "\n");				\
+	printf(BLUE("For previewing akinator tree enter 't'") "\n");			\
+	printf(BLUE("For getting definition enter 'd'") "\n");				 	 \
+	printf("-----------------------------------------------------\n");		\
 }
 
 	PRINTF_HEADER;

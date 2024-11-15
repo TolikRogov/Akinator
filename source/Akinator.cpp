@@ -23,10 +23,18 @@ BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree) {
 	printf(GREEN("I found it:") " %p\n", searched_node);
 #endif
 
-	printf(GREEN("Definiton of \"%s\": "), searched_node->data);
+	printf(GREEN("Definiton of \"%s\"(%zu): "), searched_node->data, NodeDepthInTree(searched_node));
 	PrintPathToNode(searched_node);
 
 	return TREE_NO_ERROR;
+}
+
+size_t NodeDepthInTree(Node_t* node) {
+
+	if (!node->parent)
+		return 0;
+
+	return NodeDepthInTree(node->parent) + 1;
 }
 
 BinaryTreeStatusCode PrintPathToNode(Node_t* node) {
