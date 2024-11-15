@@ -2,6 +2,66 @@
 
 char TREE_DUMP = TREE_FIRST_RUN;
 
+BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree) {
+
+	char data[NODE_DATA_MAX_LENGTH] = {};
+	printf(YELLOW("Enter searched element:")" ");
+	scanf("%[^\n]", data);
+
+#ifdef PRINT_DEBUG
+	printf("data: %s\n", data);
+#endif
+
+	Node_t* searched_node = FindNodeInTree(tree->root, data);
+
+	if (!searched_node) {
+		printf(RED("Searched element wasn't found")"\n");
+		return TREE_NO_ERROR;
+	}
+
+#ifdef PRINT_DEBUG
+	printf(GREEN("I found it:") " %p\n", searched_node);
+#endif
+
+	printf(GREEN("Definiton of \"%s\": "), searched_node->data);
+	PrintPathToNode(searched_node);
+
+	return TREE_NO_ERROR;
+}
+
+BinaryTreeStatusCode PrintPathToNode(Node_t* node) {
+
+	if (!node->parent)
+		return TREE_NO_ERROR;
+
+	printf(" - ");
+
+	if (node->parent->right == node)
+		printf("not ");
+
+	printf("%s", node->parent->data);
+	PrintPathToNode(node->parent);
+
+	return TREE_NO_ERROR;
+}
+
+Node_t* FindNodeInTree(Node_t* node, Data_t data) {
+
+	static Node_t* result = NULL;
+
+	if (result && StrCmp(result->data, data) == 0)
+		return result;
+
+	if (node->left)  FindNodeInTree(node->left, data);
+
+	if (StrCmp(node->data, data) == 0)
+		return result = node;
+
+	if (node->right) FindNodeInTree(node->right, data);
+
+	return (result && StrCmp(result->data, data) == 0 ? result : NULL);
+}
+
 BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree) {
 
 	AkinatorAskAboutNode(tree->root);
@@ -55,6 +115,11 @@ BinaryTreeStatusCode TreeDtor(Node_t* node) {
 	if (node->right) TreeDtor(node->right);
 
 	if (node) {
+		if (node->data) {
+			free(node->data);
+			node->data = NULL;
+		}
+
 		free(node);
 		node = NULL;
 	}
@@ -90,15 +155,8 @@ BinaryTreeStatusCode IsRootUnknownWhat(Node_t* root) {
 
 Node_t* FindTreeRoot(Node_t* node) {
 
-	static Node_t* Root = node;
-
-	if (!node)
-		return Root;
-
 	if (!node->parent)
-		return Root = node;
+		return node;
 
-	FindTreeRoot(node->parent);
-
-	return Root;
+	return FindTreeRoot(node->parent);
 }

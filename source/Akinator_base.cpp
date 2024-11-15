@@ -5,6 +5,9 @@ static BinaryTreeStatusCode ReadAndCreateNode(Node_t* node, FILE* base_file) {
 
 	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
 
+	if (!node)
+		return TREE_NO_ERROR;
+
 	static INIT_TREE(tree);
 	tree.root = FindTreeRoot(node);
 	BINARY_TREE_GRAPH_DUMP(&tree, "ReadAndCreateNode", node);

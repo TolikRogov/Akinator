@@ -64,6 +64,7 @@ enum TreeDumpCheck {
 
 const Data_t UNKNOWN_WHAT = "UNKNOWN WHAT";
 const Data_t NONE 		  = "NONE";
+const size_t NODE_DATA_MAX_LENGTH = 50;
 
 BinaryTreeStatusCode TreeCtor(Tree* tree);
 BinaryTreeStatusCode TreeDtor(Node_t* node);
@@ -74,6 +75,9 @@ BinaryTreeStatusCode BinaryTreeHtmlDumpFinish();
 BinaryTreeStatusCode IsRootUnknownWhat(Node_t* root);
 Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent);
 Node_t* FindTreeRoot(Node_t* node);
+Node_t* FindNodeInTree(Node_t* node, Data_t data);
 
+BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree);
 BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree);
 BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node);
+BinaryTreeStatusCode PrintPathToNode(Node_t* node);

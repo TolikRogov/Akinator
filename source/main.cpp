@@ -11,15 +11,21 @@ int main() {
 
 #define PRINTF_HEADER {														 \
 	printf("\n" BLUE("For exit from program enter 'q'") "\n");				\
-	printf(		BLUE("For run guessing mode enter 'g'") "\n");				\
-	printf(		BLUE("For preview akinator tree enter 't'") "\n");			\
+	printf(		BLUE("For running guessing mode enter 'g'") "\n");			\
+	printf(		BLUE("For previewing akinator tree enter 't'") "\n");		\
+	printf(		BLUE("For getting definition enter 'd'") "\n");				 \
 }
 
 	PRINTF_HEADER;
 	int c = 0;
 	while ((c = getchar()) != EOF) {
-		getchar();
+		if (c != '\n') getchar();
+		else continue;
 		switch (c) {
+			case 'd': {
+				AkinatorDefinitionMode(&tree);
+				break;
+			}
 			case 't': {
 				system(OPEN HTML_FILE_);
 				break;
