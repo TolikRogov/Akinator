@@ -48,8 +48,8 @@ typedef char* Data_t;
 	BINARY_TREE_GRAPH_DUMP(tree, "TreeCtor", NULL);		\
 }
 
-#define TREE_DTOR(root) {						 		 \
-	BINARY_TREE_GRAPH_DUMP(&tree, "TreeDtor", NULL); 	\
+#define TREE_DTOR(tree, root) {						 	 \
+	BINARY_TREE_GRAPH_DUMP(tree, "TreeDtor", NULL); 	\
 	TREE_HTML_DUMP_FINISH();							\
 	tree_status = TreeDtor(root);						\
 	TREE_ERROR_CHECK(tree_status);						\

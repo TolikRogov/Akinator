@@ -25,6 +25,11 @@
 	#define UNKNOWN_WHAT_(...) NULL
 #endif
 
+#define AKINATOR_RUN_GAME(tree) {			 \
+	tree_status = AkinatorRunGame(tree);	\
+	TREE_ERROR_CHECK(tree_status);			\
+}
+
 struct DumpLogInfo {
 	const char* file;
 	const size_t line;
@@ -32,6 +37,7 @@ struct DumpLogInfo {
 	const Node_t* pointer;
 };
 
+BinaryTreeStatusCode AkinatorRunGame(Tree* tree);
 BinaryTreeStatusCode BinaryTreeCssFile();
 BinaryTreeStatusCode BinaryTreeCreateDumpDir();
 BinaryTreeStatusCode BinaryTreeBashScript(Tree* tree, DumpLogInfo dump_info);

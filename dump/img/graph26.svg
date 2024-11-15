@@ -56,18 +56,18 @@
 <!-- node0x106e01de0 -->
 <g id="node3" class="node">
 <title>node0x106e01de0</title>
-<path fill="#f18805" stroke="#af3800" d="M225.5,-912.5C225.5,-912.5 484.25,-912.5 484.25,-912.5 490.25,-912.5 496.25,-918.5 496.25,-924.5 496.25,-924.5 496.25,-999 496.25,-999 496.25,-1005 490.25,-1011 484.25,-1011 484.25,-1011 225.5,-1011 225.5,-1011 219.5,-1011 213.5,-1005 213.5,-999 213.5,-999 213.5,-924.5 213.5,-924.5 213.5,-918.5 219.5,-912.5 225.5,-912.5"/>
+<path fill="#bdef9e" stroke="#99c2a2" d="M225.5,-912.5C225.5,-912.5 484.25,-912.5 484.25,-912.5 490.25,-912.5 496.25,-918.5 496.25,-924.5 496.25,-924.5 496.25,-999 496.25,-999 496.25,-1005 490.25,-1011 484.25,-1011 484.25,-1011 225.5,-1011 225.5,-1011 219.5,-1011 213.5,-1005 213.5,-999 213.5,-999 213.5,-924.5 213.5,-924.5 213.5,-918.5 219.5,-912.5 225.5,-912.5"/>
 <text text-anchor="middle" x="354.88" y="-993.7" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches analisys</text>
 <text text-anchor="middle" x="354.88" y="-977.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x106e01de0</text>
-<polyline fill="none" stroke="#af3800" points="213.5,-970 496.25,-970"/>
+<polyline fill="none" stroke="#99c2a2" points="213.5,-970 496.25,-970"/>
 <text text-anchor="middle" x="258.25" y="-952.7" font-family="Times,serif" font-size="14.00" fill="#000000">Left</text>
 <text text-anchor="middle" x="258.25" y="-936.2" font-family="Times,serif" font-size="14.00" fill="#000000">Burtsev</text>
 <text text-anchor="middle" x="258.25" y="-919.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x106e01d80</text>
-<polyline fill="none" stroke="#af3800" points="303,-912.5 303,-970"/>
+<polyline fill="none" stroke="#99c2a2" points="303,-912.5 303,-970"/>
 <text text-anchor="middle" x="347.38" y="-952.7" font-family="Times,serif" font-size="14.00" fill="#000000">Parent</text>
 <text text-anchor="middle" x="347.38" y="-936.2" font-family="Times,serif" font-size="14.00" fill="#000000">Animal</text>
 <text text-anchor="middle" x="347.38" y="-919.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x106e01e40</text>
-<polyline fill="none" stroke="#af3800" points="391.75,-912.5 391.75,-970"/>
+<polyline fill="none" stroke="#99c2a2" points="391.75,-912.5 391.75,-970"/>
 <text text-anchor="middle" x="444" y="-952.7" font-family="Times,serif" font-size="14.00" fill="#000000">Right</text>
 <text text-anchor="middle" x="444" y="-936.2" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches physics</text>
 <text text-anchor="middle" x="444" y="-919.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x106e01d50</text>
