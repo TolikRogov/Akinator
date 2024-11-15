@@ -5,9 +5,25 @@
 #include <string.h>
 #include <ctype.h>
 #include "Akinator_errors.hpp"
-#include "STACK_LIBRARY.hpp"
 
 typedef char* Data_t;
+
+#define PRINTF_HEADER {														 \
+	printf("\n-----------------------------------------------------\n");	\
+	printf(BLUE("'g': start guessing mode") "\n");							\
+	printf(BLUE("'d': getting definition") "\n");				 			 \
+	printf(BLUE("'c': compare two object") "\n");							\
+	printf(BLUE("'t': getting tree dump") "\n");							\
+	printf(BLUE("'q': exit from program") "\n");							\
+	printf("-----------------------------------------------------\n");		\
+}
+
+#define CASE(button, ...) {		 		\
+	case button: {						\
+		__VA_ARGS__;					\
+		break;							\
+	}									\
+}
 
 #define INIT_TREE(tree) Tree tree = {.info = {.name = #tree, .file_name = __FILE__, .line = __LINE__}};
 
@@ -46,6 +62,13 @@ struct Node_t {
 	Node_t* parent;
 };
 
+
+struct PathArray {
+	Node_t* searched_node;
+	Node_t** array;
+	size_t size;
+};
+
 struct TreeLogInfo {
 	const char* name;
 	const char* file_name;
@@ -77,10 +100,13 @@ Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent);
 Node_t* FindTreeRoot(Node_t* node);
 Node_t* FindNodeInTree(Node_t* node, Data_t data);
 
-size_t NodeDepthInTree(Node_t* node, Stack_t* stk);
+size_t NodeDepthInTree(Node_t* node);
 
+BinaryTreeStatusCode CreatePathToNode(Tree* tree, PathArray* path);
+
+BinaryTreeStatusCode AkinatorComparingMode(Tree* tree);
 BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree);
 BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree);
 BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node);
-BinaryTreeStatusCode PrintPathToNode(Node_t* node);
+BinaryTreeStatusCode FindPathToNode(Node_t* node, PathArray* path);
 BinaryTreeStatusCode IsRootUnknownWhat(Node_t* root);

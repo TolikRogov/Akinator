@@ -4,7 +4,7 @@
 
 #define RED(str) 		"\033[31;1m" str "\033[0m"
 #define YELLOW(str) 	"\033[33;4m" str "\033[0m"
-#define GREEN(str) 		"\033[32;6m" str "\033[0m"
+#define GREEN(str) 		"\033[32;1m" str "\033[0m"
 #define BLUE(str)		"\033[34;1m" str "\033[0m"
 #define TEAL(str)		"\033[36;1m" str "\033[0m"
 
@@ -23,6 +23,7 @@ enum BinaryTreeStatusCode {
 
 	TREE_ALLOC_ERROR,
 	TREE_NULL_POINTER,
+	TREE_NODE_NON_EXISTENT,
 
 	TREE_INVALID_TYPE,
 	TREE_BASE_SYNTAX_ERROR,

@@ -2,78 +2,149 @@
 
 char TREE_DUMP = TREE_FIRST_RUN;
 
+BinaryTreeStatusCode AkinatorComparingMode(Tree* tree) {
+
+	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
+
+	PathArray path1 = {};
+	tree_status = CreatePathToNode(tree, &path1);
+	TREE_ERROR_CHECK(tree_status);
+
+	PathArray path2 = {};
+	tree_status = CreatePathToNode(tree, &path2);
+	TREE_ERROR_CHECK(tree_status);
+
+	if (path1.searched_node == path2.searched_node) {
+		printf(GREEN("The similar!\n"));
+		return TREE_NO_ERROR;
+	}
+
+	size_t size = (path1.size < path2.size ? path1.size : path2.size);
+
+	printf(TEAL("\"%s\" and \"%s\":\n"), path1.searched_node->data, path2.searched_node->data);
+	printf("\t" GREEN("They both: "));
+	size_t i = 1;
+	for (; i < size; i++) {
+		if (path1.array[i] != path2.array[i])
+			break;
+		printf("- ");
+		if (path1.array[i - 1]->right == path1.array[i])
+			printf("not ");
+		printf("%s ", path1.array[i - 1]->data);
+	}
+	printf("\n");
+
+	printf("\t" RED("But \"%s\":")" ", path1.searched_node->data);
+	for (size_t j = i - 1; j < path1.size; j++) {
+		printf("- ");
+		if (path1.array[j]->right == path1.array[j + 1])
+			printf("not ");
+		printf("%s ", path1.array[j]->data);
+	}
+	printf("\n");
+
+	printf("\t" RED("And \"%s\":")" ", path2.searched_node->data);
+	for (size_t j = i - 1; j < path2.size; j++) {
+		printf("- ");
+		if (path2.array[j]->right == path2.array[j + 1])
+			printf("not ");
+		printf("%s ", path1.array[j]->data);
+	}
+
+	return TREE_NO_ERROR;
+}
+
 BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree) {
 
+	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
+
+	PathArray path = {};
+	tree_status = CreatePathToNode(tree, &path);
+	TREE_ERROR_CHECK(tree_status);
+
+	printf(GREEN("Definition of \"%s\":")" ", path.searched_node->data);
+
+	for (size_t i = 0; i < path.size; i++) {
+		printf("- ");
+		if (path.array[i]->right == path.array[i + 1])
+			printf("not ");
+		printf("%s ", path.array[i]->data);
+	}
+	printf("\n");
+
+	return TREE_NO_ERROR;
+}
+
+BinaryTreeStatusCode CreatePathToNode(Tree* tree, PathArray* path) {
+
 	char data[NODE_DATA_MAX_LENGTH] = {};
-	printf(YELLOW("Enter searched element:")" ");
-	scanf("%[^\n]", data);
+	printf(YELLOW("Enter object name:")" ");
+	scanf("%s", data);
 
 #ifdef PRINT_DEBUG
 	printf("data: %s\n", data);
 #endif
 
-	Node_t* searched_node = FindNodeInTree(tree->root, data);
+	path->searched_node = FindNodeInTree(tree->root, data);
 
-	if (!searched_node) {
-		printf(RED("Searched element wasn't found")"\n");
+	if (!path->searched_node) {
+		printf(RED("Searched object wasn't found")"\n");
 		return TREE_NO_ERROR;
 	}
 
 #ifdef PRINT_DEBUG
-	printf(GREEN("I found it:") " %p\n", searched_node);
+	printf(GREEN("I found it:") " %p\n", path->searched_node);
 #endif
 
-	INIT_STACK(stk);
-	STACK_CTOR(&stk, DEFAULT_CAPACITY);
+	path->array = (Node_t**)calloc(NodeDepthInTree(path->searched_node) + 1, sizeof(Node_t*));
+	if (!path->array)
+		return TREE_ALLOC_ERROR;
 
-	printf(GREEN("Definiton of \"%s\"(%zu): "), searched_node->data, NodeDepthInTree(searched_node, &stk));
-
-	PrintPathToNode(searched_node);
-
-	STACK_DTOR(&stk);
+	FindPathToNode(path->searched_node, path);
+	path->array[path->size] = path->searched_node;
 
 	return TREE_NO_ERROR;
 }
 
-size_t NodeDepthInTree(Node_t* node, Stack_t* stk) {
+size_t NodeDepthInTree(Node_t* node) {
 
 	if (!node->parent)
 		return 0;
 
-	return NodeDepthInTree(node->parent, stk) + 1;
+	return NodeDepthInTree(node->parent) + 1;
 }
 
-BinaryTreeStatusCode PrintPathToNode(Node_t* node) {
+BinaryTreeStatusCode FindPathToNode(Node_t* node, PathArray* path) {
 
 	if (!node->parent)
 		return TREE_NO_ERROR;
 
-	printf(" - ");
+	FindPathToNode(node->parent, path);
 
-	if (node->parent->right == node)
-		printf("not ");
+	path->array[path->size++] = node->parent;
 
-	printf("%s", node->parent->data);
-	PrintPathToNode(node->parent);
+#ifdef PRINT_DEBUG
+	printf("node parent: %s\n", path->array[path->size-1]->data);
+#endif
 
 	return TREE_NO_ERROR;
 }
 
 Node_t* FindNodeInTree(Node_t* node, Data_t data) {
 
-	static Node_t* result = NULL;
+	Node_t* desired_node = NULL;
 
-	if (result && StrCmp(result->data, data) == 0)
-		return result;
+#define NEIGHBOUR(unit) if (unit && (desired_node = FindNodeInTree(unit, data))) return desired_node;
 
-	if (node->left)  FindNodeInTree(node->left, data);
+	NEIGHBOUR(node->left);
+	NEIGHBOUR(node->right);
+
+#undef NEIGHBOUR
 
 	if (StrCmp(node->data, data) == 0)
-		return result = node;
+		return node;
 
-	if (node->right) FindNodeInTree(node->right, data);
-
-	return (result && StrCmp(result->data, data) == 0 ? result : NULL);
+	return NULL;
 }
 
 BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree) {

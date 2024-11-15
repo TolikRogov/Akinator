@@ -24,12 +24,9 @@ endif()
 add_executable(${PROJECT_NAME})
 
 add_subdirectory(source)
-add_subdirectory(libs)
 
 target_compile_options (${PROJECT_NAME} PRIVATE $<$<CONFIG:Debug>:${DEBUG_FLAGS}>)
 target_compile_options (${PROJECT_NAME} PRIVATE $<$<CONFIG:Release>:${RELEASE_FLAGS}>)
 
 target_link_options (${PROJECT_NAME} PRIVATE $<$<CONFIG:Debug>:${DEBUG_FLAGS}>)
 target_link_options (${PROJECT_NAME} PRIVATE $<$<CONFIG:Release>:${RELEASE_FLAGS}>)
-
-target_link_libraries (${PROJECT_NAME} PRIVATE Stack)
