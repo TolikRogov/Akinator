@@ -5,6 +5,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "Akinator_errors.hpp"
+#include "STACK_LIBRARY.hpp"
 
 typedef char* Data_t;
 
@@ -76,7 +77,7 @@ Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent);
 Node_t* FindTreeRoot(Node_t* node);
 Node_t* FindNodeInTree(Node_t* node, Data_t data);
 
-size_t NodeDepthInTree(Node_t* node);
+size_t NodeDepthInTree(Node_t* node, Stack_t* stk);
 
 BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree);
 BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree);

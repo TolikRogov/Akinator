@@ -35,4 +35,4 @@ enum BinaryTreeStatusCode {
 
 const char* BinaryTreeErrorsMessenger(BinaryTreeStatusCode status);
 int StrCmp(const char* str1, const char* str2);
-int StrLen(const char* str);
+int AkinatorStrLen(const char* str);

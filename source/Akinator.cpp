@@ -23,18 +23,24 @@ BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree) {
 	printf(GREEN("I found it:") " %p\n", searched_node);
 #endif
 
-	printf(GREEN("Definiton of \"%s\"(%zu): "), searched_node->data, NodeDepthInTree(searched_node));
+	INIT_STACK(stk);
+	STACK_CTOR(&stk, DEFAULT_CAPACITY);
+
+	printf(GREEN("Definiton of \"%s\"(%zu): "), searched_node->data, NodeDepthInTree(searched_node, &stk));
+
 	PrintPathToNode(searched_node);
+
+	STACK_DTOR(&stk);
 
 	return TREE_NO_ERROR;
 }
 
-size_t NodeDepthInTree(Node_t* node) {
+size_t NodeDepthInTree(Node_t* node, Stack_t* stk) {
 
 	if (!node->parent)
 		return 0;
 
-	return NodeDepthInTree(node->parent) + 1;
+	return NodeDepthInTree(node->parent, stk) + 1;
 }
 
 BinaryTreeStatusCode PrintPathToNode(Node_t* node) {
@@ -139,7 +145,7 @@ Node_t* CreateNode(Data_t data, Node_t* left, Node_t* right, Node_t* parent) {
 
 	Node_t* node = (Node_t*)calloc(1, sizeof(*node));
 
-	int data_size = StrLen(data);
+	int data_size = AkinatorStrLen(data);
 	node->data = (Data_t)calloc((size_t)data_size + 1, sizeof(char));
 	for (int i = 0; i < data_size; i++) node->data[i] = data[i];
 	node->data[data_size] = '\0';

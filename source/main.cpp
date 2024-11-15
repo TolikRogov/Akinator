@@ -11,10 +11,10 @@ int main() {
 
 #define PRINTF_HEADER {														 \
 	printf("\n-----------------------------------------------------\n");	\
-	printf(BLUE("For exit from program enter 'q'") "\n");					\
-	printf(BLUE("For running guessing mode enter 'g'") "\n");				\
-	printf(BLUE("For previewing akinator tree enter 't'") "\n");			\
-	printf(BLUE("For getting definition enter 'd'") "\n");				 	 \
+	printf(BLUE("'g': start guessing game") "\n");							\
+	printf(BLUE("'t': getting tree dump") "\n");							\
+	printf(BLUE("'d': getting definition") "\n");				 			 \
+	printf(BLUE("'q': exit from program") "\n");							\
 	printf("-----------------------------------------------------\n");		\
 }
 

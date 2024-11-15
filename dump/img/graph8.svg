@@ -8,16 +8,16 @@
  viewBox="0.00 0.00 626.12 715.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 711.5)">
 <polygon fill="#dcdcdc" stroke="none" points="-4,4 -4,-711.5 622.12,-711.5 622.12,4 -4,4"/>
-<!-- node0x103701de0 -->
+<!-- node0x103601de0 -->
 <g id="node1" class="node">
-<title>node0x103701de0</title>
+<title>node0x103601de0</title>
 <path fill="#fbee21" stroke="#d3c70d" d="M117.62,-608.5C117.62,-608.5 344.88,-608.5 344.88,-608.5 350.88,-608.5 356.88,-614.5 356.88,-620.5 356.88,-620.5 356.88,-695 356.88,-695 356.88,-701 350.88,-707 344.88,-707 344.88,-707 117.63,-707 117.63,-707 111.62,-707 105.62,-701 105.62,-695 105.62,-695 105.62,-620.5 105.62,-620.5 105.62,-614.5 111.62,-608.5 117.62,-608.5"/>
 <text text-anchor="middle" x="231.25" y="-689.7" font-family="Times,serif" font-size="14.00" fill="#000000">Animal</text>
-<text text-anchor="middle" x="231.25" y="-673.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701de0</text>
+<text text-anchor="middle" x="231.25" y="-673.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601de0</text>
 <polyline fill="none" stroke="#d3c70d" points="105.62,-666 356.88,-666"/>
 <text text-anchor="middle" x="150.75" y="-648.7" font-family="Times,serif" font-size="14.00" fill="#000000">Left</text>
 <text text-anchor="middle" x="150.75" y="-632.2" font-family="Times,serif" font-size="14.00" fill="#000000">Poltorashka</text>
-<text text-anchor="middle" x="150.75" y="-615.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701db0</text>
+<text text-anchor="middle" x="150.75" y="-615.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601db0</text>
 <polyline fill="none" stroke="#d3c70d" points="195.88,-608.5 195.88,-666"/>
 <text text-anchor="middle" x="222.62" y="-648.7" font-family="Times,serif" font-size="14.00" fill="#000000">Parent</text>
 <text text-anchor="middle" x="222.62" y="-632.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
@@ -25,14 +25,14 @@
 <polyline fill="none" stroke="#d3c70d" points="249.38,-608.5 249.38,-666"/>
 <text text-anchor="middle" x="303.12" y="-648.7" font-family="Times,serif" font-size="14.00" fill="#000000">Right</text>
 <text text-anchor="middle" x="303.12" y="-632.2" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches analisys</text>
-<text text-anchor="middle" x="303.12" y="-615.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701d80</text>
+<text text-anchor="middle" x="303.12" y="-615.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601d80</text>
 </g>
-<!-- node0x103701db0 -->
+<!-- node0x103601db0 -->
 <g id="node2" class="node">
-<title>node0x103701db0</title>
+<title>node0x103601db0</title>
 <path fill="#d5cfe1" stroke="#8797b2" d="M12,-456.5C12,-456.5 184.5,-456.5 184.5,-456.5 190.5,-456.5 196.5,-462.5 196.5,-468.5 196.5,-468.5 196.5,-543 196.5,-543 196.5,-549 190.5,-555 184.5,-555 184.5,-555 12,-555 12,-555 6,-555 0,-549 0,-543 0,-543 0,-468.5 0,-468.5 0,-462.5 6,-456.5 12,-456.5"/>
 <text text-anchor="middle" x="98.25" y="-537.7" font-family="Times,serif" font-size="14.00" fill="#000000">Poltorashka</text>
-<text text-anchor="middle" x="98.25" y="-521.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701db0</text>
+<text text-anchor="middle" x="98.25" y="-521.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601db0</text>
 <polyline fill="none" stroke="#8797b2" points="0,-514 196.5,-514"/>
 <text text-anchor="middle" x="26.75" y="-496.7" font-family="Times,serif" font-size="14.00" fill="#000000">Left</text>
 <text text-anchor="middle" x="26.75" y="-480.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
@@ -40,70 +40,70 @@
 <polyline fill="none" stroke="#8797b2" points="53.5,-456.5 53.5,-514"/>
 <text text-anchor="middle" x="98.25" y="-496.7" font-family="Times,serif" font-size="14.00" fill="#000000">Parent</text>
 <text text-anchor="middle" x="98.25" y="-480.2" font-family="Times,serif" font-size="14.00" fill="#000000">Animal</text>
-<text text-anchor="middle" x="98.25" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701de0</text>
+<text text-anchor="middle" x="98.25" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601de0</text>
 <polyline fill="none" stroke="#8797b2" points="143,-456.5 143,-514"/>
 <text text-anchor="middle" x="169.75" y="-496.7" font-family="Times,serif" font-size="14.00" fill="#000000">Right</text>
 <text text-anchor="middle" x="169.75" y="-480.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
 <text text-anchor="middle" x="169.75" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x0</text>
 </g>
-<!-- node0x103701de0&#45;&gt;node0x103701db0 -->
+<!-- node0x103601de0&#45;&gt;node0x103601db0 -->
 <g id="edge1" class="edge">
-<title>node0x103701de0:left&#45;&gt;node0x103701db0</title>
+<title>node0x103601de0:left&#45;&gt;node0x103601db0</title>
 <path fill="none" stroke="#187ae8" stroke-width="2" d="M104.62,-637.25C73.92,-637.25 73.9,-600.77 80.71,-566.38"/>
 <polygon fill="#187ae8" stroke="#187ae8" stroke-width="2" points="83.76,-568.82 82.48,-558.3 76.92,-567.32 83.76,-568.82"/>
 <text text-anchor="middle" x="86.89" y="-576.7" font-family="Times,serif" font-size="14.00">Да</text>
 </g>
-<!-- node0x103701d80 -->
+<!-- node0x103601d80 -->
 <g id="node4" class="node">
-<title>node0x103701d80</title>
+<title>node0x103601d80</title>
 <path fill="#bdef9e" stroke="#99c2a2" d="M226.12,-456.5C226.12,-456.5 486.38,-456.5 486.38,-456.5 492.38,-456.5 498.38,-462.5 498.38,-468.5 498.38,-468.5 498.38,-543 498.38,-543 498.38,-549 492.38,-555 486.38,-555 486.38,-555 226.12,-555 226.12,-555 220.12,-555 214.12,-549 214.12,-543 214.12,-543 214.12,-468.5 214.12,-468.5 214.12,-462.5 220.12,-456.5 226.12,-456.5"/>
 <text text-anchor="middle" x="356.25" y="-537.7" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches analisys</text>
-<text text-anchor="middle" x="356.25" y="-521.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701d80</text>
+<text text-anchor="middle" x="356.25" y="-521.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601d80</text>
 <polyline fill="none" stroke="#99c2a2" points="214.12,-514 498.38,-514"/>
 <text text-anchor="middle" x="259.25" y="-496.7" font-family="Times,serif" font-size="14.00" fill="#000000">Left</text>
 <text text-anchor="middle" x="259.25" y="-480.2" font-family="Times,serif" font-size="14.00" fill="#000000">Burtsev</text>
-<text text-anchor="middle" x="259.25" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701d20</text>
+<text text-anchor="middle" x="259.25" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601d20</text>
 <polyline fill="none" stroke="#99c2a2" points="304.38,-456.5 304.38,-514"/>
 <text text-anchor="middle" x="349.12" y="-496.7" font-family="Times,serif" font-size="14.00" fill="#000000">Parent</text>
 <text text-anchor="middle" x="349.12" y="-480.2" font-family="Times,serif" font-size="14.00" fill="#000000">Animal</text>
-<text text-anchor="middle" x="349.12" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701de0</text>
+<text text-anchor="middle" x="349.12" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601de0</text>
 <polyline fill="none" stroke="#99c2a2" points="393.88,-456.5 393.88,-514"/>
 <text text-anchor="middle" x="446.12" y="-496.7" font-family="Times,serif" font-size="14.00" fill="#000000">Right</text>
 <text text-anchor="middle" x="446.12" y="-480.2" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches physics</text>
-<text text-anchor="middle" x="446.12" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701cf0</text>
+<text text-anchor="middle" x="446.12" y="-463.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601cf0</text>
 </g>
-<!-- node0x103701de0&#45;&gt;node0x103701d80 -->
+<!-- node0x103601de0&#45;&gt;node0x103601d80 -->
 <g id="edge6" class="edge">
-<title>node0x103701de0:right&#45;&gt;node0x103701d80</title>
+<title>node0x103601de0:right&#45;&gt;node0x103601d80</title>
 <path fill="none" stroke="#48e818" stroke-width="2" d="M303.12,-608C303.12,-593.37 307.53,-578.77 313.8,-565.39"/>
 <polygon fill="#48e818" stroke="#48e818" stroke-width="2" points="316.08,-568.61 317.54,-558.12 309.86,-565.42 316.08,-568.61"/>
 <text text-anchor="middle" x="320.58" y="-576.7" font-family="Times,serif" font-size="14.00">Нет</text>
 </g>
-<!-- node0x103701cc0 -->
+<!-- node0x103601cc0 -->
 <g id="node3" class="node">
-<title>node0x103701cc0</title>
+<title>node0x103601cc0</title>
 <path fill="#f18805" stroke="#af3800" d="M301.5,-152.5C301.5,-152.5 525,-152.5 525,-152.5 531,-152.5 537,-158.5 537,-164.5 537,-164.5 537,-239 537,-239 537,-245 531,-251 525,-251 525,-251 301.5,-251 301.5,-251 295.5,-251 289.5,-245 289.5,-239 289.5,-239 289.5,-164.5 289.5,-164.5 289.5,-158.5 295.5,-152.5 301.5,-152.5"/>
 <text text-anchor="middle" x="413.25" y="-233.7" font-family="Times,serif" font-size="14.00" fill="#000000">Nefor</text>
-<text text-anchor="middle" x="413.25" y="-217.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701cc0</text>
+<text text-anchor="middle" x="413.25" y="-217.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601cc0</text>
 <polyline fill="none" stroke="#af3800" points="289.5,-210 537,-210"/>
 <text text-anchor="middle" x="334.25" y="-192.7" font-family="Times,serif" font-size="14.00" fill="#000000">Left</text>
 <text text-anchor="middle" x="334.25" y="-176.2" font-family="Times,serif" font-size="14.00" fill="#000000">Magic</text>
-<text text-anchor="middle" x="334.25" y="-159.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701c90</text>
+<text text-anchor="middle" x="334.25" y="-159.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601c90</text>
 <polyline fill="none" stroke="#af3800" points="379,-152.5 379,-210"/>
 <text text-anchor="middle" x="431.25" y="-192.7" font-family="Times,serif" font-size="14.00" fill="#000000">Parent</text>
 <text text-anchor="middle" x="431.25" y="-176.2" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches physics</text>
-<text text-anchor="middle" x="431.25" y="-159.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701cf0</text>
+<text text-anchor="middle" x="431.25" y="-159.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601cf0</text>
 <polyline fill="none" stroke="#af3800" points="483.5,-152.5 483.5,-210"/>
 <text text-anchor="middle" x="510.25" y="-192.7" font-family="Times,serif" font-size="14.00" fill="#000000">Right</text>
 <text text-anchor="middle" x="510.25" y="-176.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
 <text text-anchor="middle" x="510.25" y="-159.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x0</text>
 </g>
-<!-- node0x103701c90 -->
+<!-- node0x103601c90 -->
 <g id="node7" class="node">
-<title>node0x103701c90</title>
+<title>node0x103601c90</title>
 <path fill="#d5cfe1" stroke="#8797b2" d="M248.38,-0.5C248.38,-0.5 420.12,-0.5 420.12,-0.5 426.12,-0.5 432.12,-6.5 432.12,-12.5 432.12,-12.5 432.12,-87 432.12,-87 432.12,-93 426.12,-99 420.12,-99 420.12,-99 248.38,-99 248.38,-99 242.38,-99 236.38,-93 236.38,-87 236.38,-87 236.38,-12.5 236.38,-12.5 236.38,-6.5 242.38,-0.5 248.38,-0.5"/>
 <text text-anchor="middle" x="334.25" y="-81.7" font-family="Times,serif" font-size="14.00" fill="#000000">Magic</text>
-<text text-anchor="middle" x="334.25" y="-65.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701c90</text>
+<text text-anchor="middle" x="334.25" y="-65.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601c90</text>
 <polyline fill="none" stroke="#8797b2" points="236.38,-58 432.12,-58"/>
 <text text-anchor="middle" x="263.12" y="-40.7" font-family="Times,serif" font-size="14.00" fill="#000000">Left</text>
 <text text-anchor="middle" x="263.12" y="-24.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
@@ -111,25 +111,25 @@
 <polyline fill="none" stroke="#8797b2" points="289.88,-0.5 289.88,-58"/>
 <text text-anchor="middle" x="334.25" y="-40.7" font-family="Times,serif" font-size="14.00" fill="#000000">Parent</text>
 <text text-anchor="middle" x="334.25" y="-24.2" font-family="Times,serif" font-size="14.00" fill="#000000">Nefor</text>
-<text text-anchor="middle" x="334.25" y="-7.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701cc0</text>
+<text text-anchor="middle" x="334.25" y="-7.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601cc0</text>
 <polyline fill="none" stroke="#8797b2" points="378.62,-0.5 378.62,-58"/>
 <text text-anchor="middle" x="405.38" y="-40.7" font-family="Times,serif" font-size="14.00" fill="#000000">Right</text>
 <text text-anchor="middle" x="405.38" y="-24.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
 <text text-anchor="middle" x="405.38" y="-7.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x0</text>
 </g>
-<!-- node0x103701cc0&#45;&gt;node0x103701c90 -->
+<!-- node0x103601cc0&#45;&gt;node0x103601c90 -->
 <g id="edge4" class="edge">
-<title>node0x103701cc0:left&#45;&gt;node0x103701c90</title>
+<title>node0x103601cc0:left&#45;&gt;node0x103601c90</title>
 <path fill="none" stroke="#187ae8" stroke-width="2" d="M334.25,-152C334.25,-138.61 334.25,-124.22 334.25,-110.62"/>
 <polygon fill="#187ae8" stroke="#187ae8" stroke-width="2" points="337.75,-112.44 334.25,-102.44 330.75,-112.44 337.75,-112.44"/>
 <text text-anchor="middle" x="342.12" y="-120.7" font-family="Times,serif" font-size="14.00">Да</text>
 </g>
-<!-- node0x103701d20 -->
+<!-- node0x103601d20 -->
 <g id="node5" class="node">
-<title>node0x103701d20</title>
+<title>node0x103601d20</title>
 <path fill="#d5cfe1" stroke="#8797b2" d="M148,-304.5C148,-304.5 338.5,-304.5 338.5,-304.5 344.5,-304.5 350.5,-310.5 350.5,-316.5 350.5,-316.5 350.5,-391 350.5,-391 350.5,-397 344.5,-403 338.5,-403 338.5,-403 148,-403 148,-403 142,-403 136,-397 136,-391 136,-391 136,-316.5 136,-316.5 136,-310.5 142,-304.5 148,-304.5"/>
 <text text-anchor="middle" x="243.25" y="-385.7" font-family="Times,serif" font-size="14.00" fill="#000000">Burtsev</text>
-<text text-anchor="middle" x="243.25" y="-369.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701d20</text>
+<text text-anchor="middle" x="243.25" y="-369.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601d20</text>
 <polyline fill="none" stroke="#8797b2" points="136,-362 350.5,-362"/>
 <text text-anchor="middle" x="162.75" y="-344.7" font-family="Times,serif" font-size="14.00" fill="#000000">Left</text>
 <text text-anchor="middle" x="162.75" y="-328.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
@@ -137,48 +137,48 @@
 <polyline fill="none" stroke="#8797b2" points="189.5,-304.5 189.5,-362"/>
 <text text-anchor="middle" x="243.25" y="-344.7" font-family="Times,serif" font-size="14.00" fill="#000000">Parent</text>
 <text text-anchor="middle" x="243.25" y="-328.2" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches analisys</text>
-<text text-anchor="middle" x="243.25" y="-311.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701d80</text>
+<text text-anchor="middle" x="243.25" y="-311.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601d80</text>
 <polyline fill="none" stroke="#8797b2" points="297,-304.5 297,-362"/>
 <text text-anchor="middle" x="323.75" y="-344.7" font-family="Times,serif" font-size="14.00" fill="#000000">Right</text>
 <text text-anchor="middle" x="323.75" y="-328.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
 <text text-anchor="middle" x="323.75" y="-311.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x0</text>
 </g>
-<!-- node0x103701d80&#45;&gt;node0x103701d20 -->
+<!-- node0x103601d80&#45;&gt;node0x103601d20 -->
 <g id="edge2" class="edge">
-<title>node0x103701d80:left&#45;&gt;node0x103701d20</title>
+<title>node0x103601d80:left&#45;&gt;node0x103601d20</title>
 <path fill="none" stroke="#187ae8" stroke-width="2" d="M259.25,-456C259.25,-442.51 257.85,-428.14 255.87,-414.58"/>
 <polygon fill="#187ae8" stroke="#187ae8" stroke-width="2" points="259.6,-415.74 254.57,-406.42 252.69,-416.84 259.6,-415.74"/>
 <text text-anchor="middle" x="266.27" y="-424.7" font-family="Times,serif" font-size="14.00">Да</text>
 </g>
-<!-- node0x103701cf0 -->
+<!-- node0x103601cf0 -->
 <g id="node6" class="node">
-<title>node0x103701cf0</title>
+<title>node0x103601cf0</title>
 <path fill="#bdef9e" stroke="#99c2a2" d="M380.38,-304.5C380.38,-304.5 606.12,-304.5 606.12,-304.5 612.12,-304.5 618.12,-310.5 618.12,-316.5 618.12,-316.5 618.12,-391 618.12,-391 618.12,-397 612.12,-403 606.12,-403 606.12,-403 380.38,-403 380.38,-403 374.38,-403 368.38,-397 368.38,-391 368.38,-391 368.38,-316.5 368.38,-316.5 368.38,-310.5 374.38,-304.5 380.38,-304.5"/>
 <text text-anchor="middle" x="493.25" y="-385.7" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches physics</text>
-<text text-anchor="middle" x="493.25" y="-369.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701cf0</text>
+<text text-anchor="middle" x="493.25" y="-369.2" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601cf0</text>
 <polyline fill="none" stroke="#99c2a2" points="368.38,-362 618.12,-362"/>
 <text text-anchor="middle" x="412.75" y="-344.7" font-family="Times,serif" font-size="14.00" fill="#000000">Left</text>
 <text text-anchor="middle" x="412.75" y="-328.2" font-family="Times,serif" font-size="14.00" fill="#000000">Nefor</text>
-<text text-anchor="middle" x="412.75" y="-311.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701cc0</text>
+<text text-anchor="middle" x="412.75" y="-311.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601cc0</text>
 <polyline fill="none" stroke="#99c2a2" points="457.12,-304.5 457.12,-362"/>
 <text text-anchor="middle" x="510.88" y="-344.7" font-family="Times,serif" font-size="14.00" fill="#000000">Parent</text>
 <text text-anchor="middle" x="510.88" y="-328.2" font-family="Times,serif" font-size="14.00" fill="#000000">Teaches analisys</text>
-<text text-anchor="middle" x="510.88" y="-311.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103701d80</text>
+<text text-anchor="middle" x="510.88" y="-311.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x103601d80</text>
 <polyline fill="none" stroke="#99c2a2" points="564.62,-304.5 564.62,-362"/>
 <text text-anchor="middle" x="591.38" y="-344.7" font-family="Times,serif" font-size="14.00" fill="#000000">Right</text>
 <text text-anchor="middle" x="591.38" y="-328.2" font-family="Times,serif" font-size="14.00" fill="#000000">NONE</text>
 <text text-anchor="middle" x="591.38" y="-311.7" font-family="Times,serif" font-size="14.00" fill="#000000">0x0</text>
 </g>
-<!-- node0x103701d80&#45;&gt;node0x103701cf0 -->
+<!-- node0x103601d80&#45;&gt;node0x103601cf0 -->
 <g id="edge5" class="edge">
-<title>node0x103701d80:right&#45;&gt;node0x103701cf0</title>
+<title>node0x103601d80:right&#45;&gt;node0x103601cf0</title>
 <path fill="none" stroke="#48e818" stroke-width="2" d="M446.12,-456C446.12,-441.7 450.04,-427.23 455.61,-413.88"/>
 <polygon fill="#48e818" stroke="#48e818" stroke-width="2" points="458.15,-416.74 459.13,-406.19 451.79,-413.82 458.15,-416.74"/>
 <text text-anchor="middle" x="462.84" y="-424.7" font-family="Times,serif" font-size="14.00">Нет</text>
 </g>
-<!-- node0x103701cf0&#45;&gt;node0x103701cc0 -->
+<!-- node0x103601cf0&#45;&gt;node0x103601cc0 -->
 <g id="edge3" class="edge">
-<title>node0x103701cf0:left&#45;&gt;node0x103701cc0</title>
+<title>node0x103601cf0:left&#45;&gt;node0x103601cc0</title>
 <path fill="none" stroke="#187ae8" stroke-width="2" d="M412.75,-304C412.75,-290.61 412.79,-276.22 412.86,-262.62"/>
 <polygon fill="#187ae8" stroke="#187ae8" stroke-width="2" points="416.35,-264.46 412.9,-254.44 409.35,-264.43 416.35,-264.46"/>
 <text text-anchor="middle" x="420.7" y="-272.7" font-family="Times,serif" font-size="14.00">Да</text>

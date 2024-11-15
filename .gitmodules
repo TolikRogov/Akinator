@@ -1,0 +1,3 @@
+[submodule "libs/Stack"]
+	path = libs/Stack
+	url = https://github.com/TolikRogov/Stack

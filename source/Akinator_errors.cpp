@@ -32,7 +32,7 @@ int StrCmp(const char* str1, const char* str2) {
 	return (*(str1 + i) - *(str2 + i));
 }
 
-int StrLen(const char* str) {
+int AkinatorStrLen(const char* str) {
 
 	if (!str)
 		return -1;
