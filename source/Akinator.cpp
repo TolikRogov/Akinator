@@ -79,7 +79,8 @@ BinaryTreeStatusCode CreatePathToNode(Tree* tree, PathArray* path) {
 
 	char data[NODE_DATA_MAX_LENGTH] = {};
 	printf(YELLOW("Enter object name:")" ");
-	scanf("%s", data);
+	scanf("%[^\n]", data);
+	getchar();
 
 #ifdef PRINT_DEBUG
 	printf("data: %s\n", data);
@@ -158,7 +159,7 @@ BinaryTreeStatusCode AddingNewAnswer(Node_t* node, Tree* tree) {
 
 	char cur_node[NODE_DATA_MAX_LENGTH] = {};
 	printf(YELLOW("You have in mind:")" ");
-	scanf("%s", cur_node);
+	scanf("%[^\n]", cur_node);
 
 #ifdef REPLAY_NODE_IN_TREE
 	if (FindNodeInTree(tree.root, cur_node))
@@ -167,7 +168,7 @@ BinaryTreeStatusCode AddingNewAnswer(Node_t* node, Tree* tree) {
 
 	char cur_question[NODE_DATA_MAX_LENGTH] = {};
 	printf(YELLOW("How is \"%s\" different from \"%s\": ")" ", cur_node, node->data);
-	scanf("%s", cur_question);
+	scanf("%[^\n]", cur_question);
 
 	if (node == node->parent->left)
 		node->parent->parent->left = CreateNode(cur_question, CreateNode(cur_node, NULL, NULL, NULL), node, node->parent);

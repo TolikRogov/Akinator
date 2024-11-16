@@ -5,6 +5,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
 #include "Akinator_errors.hpp"
 
 typedef char* Data_t;

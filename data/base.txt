@@ -1,31 +1,67 @@
-{"Animal"
-	{"Angry"
-		{"Sobaken"}
-		{"Poltorashka"}
-	}
-	{"Teaches analisys"
-		{"Burtsev"}
-		{"Teaches physics"
-			{"Nefor"
-				{"Magic"}
-				{"Pidoras"
-					{"Vanovsky"}
-					{"Ovchos"}
+{"Associated with mipt"
+	{"Human"
+		{"Teacher"
+			{"Teaches physics"
+				{"Amoeba"
+					{"Ovchinkin"}
+					{"Pidoraso"
+						{"Vanovsky"}
+						{"Koldunov"}
+					}
 				}
-			}
-			{"Teaches angem"
-				{"Chubarik"}
-				{"Do sport"
-					{"Coach"
-						{"Valentin Guardiola"}
-						{"IN KARTEL"
-							{"LEGEND"}
-							{"LX"}
+				{"Teaches laboratory work"
+					{"The most fucker on the planet"
+						{"Yavorsky"}
+						{"Cherkasova"}
+					}
+					{"Teaches discrete analysis"
+						{"Related to geranium"
+							{"Pletnev"}
+							{"Сomes from the end of the backdrop"
+								{"Burtsev"}
+								{"Egor Kirikov"}
+							}
+						}
+						{"Teaches programming"
+							{"The best teacher on the planet"
+								{"Kvadrober"
+									{"Chursin Vladimir"}
+									{"Ded"}
+								}
+								{"Divary"}
+							}
+							{"Do sport"
+								{"Coach"
+									{"Valentin Spivak Guardiola"}
+									{"Alexcey Ostriy"}
+								}
+								{"Pidoraso"}
+							}
 						}
 					}
-					{"Kvadrober"}
 				}
 			}
+			{"Student"
+				{"Cartel head"
+					{"Dmitriy Gricenko"}
+					{"Bellarussian"
+						{"Alexander Alexandrovich"}
+						{"Gigachat"
+							{"Aleksey Kornilov"}
+							{"Anatoliy Rogov"}
+						}
+					}
+				}
+				{"Ivan Ryabov"}
+			}
 		}
+		{"Animal"
+			{"Poltorashka"}
+			{"Dream"}
+		}
+	}
+	{"Something uninteresting"
+		{"Baumanka"}
+		{"Entertainment"}
 	}
 }
