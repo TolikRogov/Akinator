@@ -30,7 +30,6 @@
 	TREE_ERROR_CHECK(tree_status);			\
 }
 
-BinaryTreeStatusCode AkinatorRunGame(Tree* tree);
 BinaryTreeStatusCode BinaryTreeCssFile();
 BinaryTreeStatusCode BinaryTreeCreateDumpDir();
 BinaryTreeStatusCode BinaryTreeBashScript(Tree* tree, DumpLogInfo* dump_info);

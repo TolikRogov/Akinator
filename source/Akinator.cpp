@@ -147,18 +147,23 @@ Node_t* FindNodeInTree(Node_t* node, Data_t data) {
 
 BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree) {
 
-	AkinatorAskAboutNode(tree->root);
+	AkinatorAskAboutNode(tree->root, tree);
 
 	return TREE_NO_ERROR;
 }
 
-BinaryTreeStatusCode AddingNewAnswer(Node_t* node) {
+BinaryTreeStatusCode AddingNewAnswer(Node_t* node, Tree* tree) {
 
 	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
 
 	char cur_node[NODE_DATA_MAX_LENGTH] = {};
 	printf(YELLOW("You have in mind:")" ");
 	scanf("%s", cur_node);
+
+#ifdef REPLAY_NODE_IN_TREE
+	if (FindNodeInTree(tree.root, cur_node))
+		TREE_ERROR_CHECK(TREE_NODE_ALREADY_EXISTENT);
+#endif
 
 	char cur_question[NODE_DATA_MAX_LENGTH] = {};
 	printf(YELLOW("How is \"%s\" different from \"%s\": ")" ", cur_node, node->data);
@@ -169,14 +174,14 @@ BinaryTreeStatusCode AddingNewAnswer(Node_t* node) {
 	else
 		node->parent->parent->right = CreateNode(cur_question, CreateNode(cur_node, NULL, NULL, NULL), node, node->parent);
 
-	INIT_TREE(tree);
-	tree.root = FindTreeRoot(node);
-	BINARY_TREE_GRAPH_DUMP(&tree, "AddingNewAnswer", node->parent);
+	BINARY_TREE_GRAPH_DUMP(tree, "AddingNewAnswer", node->parent);
+
+	tree->status = TREE_HAS_BEEN_CHANGED;
 
 	return TREE_NO_ERROR;
 }
 
-BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node) {
+BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node, Tree* tree) {
 
 	printf(TEAL("This %s?") " [y/n]\n", node->data);
 	int c = getchar();
@@ -186,19 +191,19 @@ BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node) {
 			printf(GREEN("I always know!") "\n");
 			return TREE_NO_ERROR;
 		}
-		AkinatorAskAboutNode(node->left);
+		AkinatorAskAboutNode(node->left, tree);
 	}
 	else if (c == 'n') {
 		if (!node->right) {
 			printf(RED("Sorry, I dont know what you made!")"\n");
-			AddingNewAnswer(node);
+			AddingNewAnswer(node, tree);
 			return TREE_NO_ERROR;
 		}
 
-		AkinatorAskAboutNode(node->right);
+		AkinatorAskAboutNode(node->right, tree);
 	}
 	else
-		AkinatorAskAboutNode(node);
+		AkinatorAskAboutNode(node, tree);
 
 	return TREE_NO_ERROR;
 }
@@ -208,6 +213,7 @@ BinaryTreeStatusCode TreeCtor(Tree* tree) {
 	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
 
 	tree->root = CreateNode(UNKNOWN_WHAT, NULL, NULL, NULL);
+	tree->status = TREE_HAS_NOT_BEEN_CHANGED;
 
 	if (TREE_DUMP == TREE_ALREADY_ON)
 		return TREE_NO_ERROR;

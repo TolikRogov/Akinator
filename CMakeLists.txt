@@ -11,6 +11,7 @@ set (RELEASE_FLAGS -std=c++17)
 set (DEBUG OFF)
 set (BASE_TREE OFF)
 set (UNKNOWN_WHAT OFF)
+set (REPLAYS OFF)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -25,6 +26,10 @@ endif()
 if (${BASE_TREE})
 	add_compile_definitions(GENERATE_BASE_TREE_DUMP)
 endif ()
+
+if (${REPLAYS})
+	add_compile_definitions(REPLAY_NODE_IN_TREE)
+endif()
 
 add_executable(${PROJECT_NAME})
 

@@ -7,6 +7,7 @@ int main() {
 
 	INIT_TREE(tree);
 	TREE_CTOR(&tree);
+
 	AKINATOR_READ_BASE(&tree);
 
 	AKINATOR_RUN_GAME(&tree);

@@ -1,11 +1,17 @@
 {"Animal"
-	{"Poltorashka"}
+	{"Angry"
+		{"Sobaken"}
+		{"Poltorashka"}
+	}
 	{"Teaches analisys"
 		{"Burtsev"}
 		{"Teaches physics"
 			{"Nefor"
 				{"Magic"}
-				{"Ovchos"}
+				{"Pidoras"
+					{"Vanovsky"}
+					{"Ovchos"}
+				}
 			}
 			{"Teaches angem"
 				{"Chubarik"}

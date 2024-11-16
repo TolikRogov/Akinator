@@ -55,6 +55,17 @@ typedef char* Data_t;
 	TREE_ERROR_CHECK(tree_status);						\
 }
 
+enum TreeDumpCheck {
+	TREE_FIRST_RUN,
+	TREE_SECOND_RUN,
+	TREE_ALREADY_ON,
+};
+
+enum TreeChanges {
+	TREE_HAS_BEEN_CHANGED,
+	TREE_HAS_NOT_BEEN_CHANGED
+};
+
 struct Node_t {
 	Data_t data;
 	Node_t* left;
@@ -85,12 +96,7 @@ struct DumpLogInfo {
 struct Tree {
 	Node_t* root;
 	TreeLogInfo info;
-};
-
-enum TreeDumpCheck {
-	TREE_FIRST_RUN,
-	TREE_SECOND_RUN,
-	TREE_ALREADY_ON,
+	TreeChanges status;
 };
 
 const Data_t UNKNOWN_WHAT = "UNKNOWN WHAT";
@@ -113,9 +119,10 @@ BinaryTreeStatusCode CreatePathToNode(Tree* tree, PathArray* path);
 
 BinaryTreeStatusCode BinaryTreeGraphDump(Tree* tree, DumpLogInfo dump_info);
 
+BinaryTreeStatusCode AddingNewAnswer(Node_t* node, Tree* tree);
 BinaryTreeStatusCode AkinatorComparingMode(Tree* tree);
 BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree);
 BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree);
-BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node);
+BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node, Tree* tree);
 BinaryTreeStatusCode FindPathToNode(Node_t* node, PathArray* path);
 BinaryTreeStatusCode IsRootUnknownWhat(Node_t* root);

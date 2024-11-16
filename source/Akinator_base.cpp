@@ -1,15 +1,87 @@
 #include "Akinator_base.hpp"
 #include "Akinator_dump.hpp"
 
+BinaryTreeStatusCode AkinatorRunGame(Tree* tree) {
+
+	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
+
+	PRINTF_HEADER;
+	int c = 0;
+	while ((c = getchar()) != EOF) {
+		if (c != '\n') getchar();
+		else continue;
+		switch (c) {
+			CASE('c', AkinatorComparingMode(tree));
+			CASE('d', AkinatorDefinitionMode(tree));
+			CASE('g', AkinatorGuessingMode(tree));
+			CASE('t', system(OPEN HTML_FILE_));
+			CASE('q', {if (tree->status == TREE_HAS_BEEN_CHANGED) {
+					   		printf(BLUE("Do you want to save your tree into the base? [y/n]:")" ");
+							if ((c = getchar()) == 'y')
+								AKINATOR_SAVE_TREE(tree);
+					   }
+					   TREE_DTOR(tree, tree->root);
+					   printf("GG BRO!\n");
+					   return TREE_NO_ERROR;})
+			default: {
+				printf(RED("UNKNOWN COMMAND!") "\n" YELLOW("TRY AGAIN") "\n");
+				break;
+			}
+		}
+		PRINTF_HEADER;
+	}
+
+	return TREE_NO_ERROR;
+}
+
+static BinaryTreeStatusCode WriteNodeToFile(Node_t* node, FILE* base_file) {
+
+	size_t node_depth = NodeDepthInTree(node);
+
+	for (size_t i = 0; i < node_depth; i++)
+		fprintf(base_file, "\t");
+
+	fprintf(base_file, "{\"%s\"", node->data);
+
+	if (node->left)  { fprintf(base_file, "\n"); WriteNodeToFile(node->left, base_file); }
+	if (node->right) { fprintf(base_file, "\n"); WriteNodeToFile(node->right, base_file); }
+
+	if (node->left)	{
+		fprintf(base_file, "\n");
+		for (size_t i = 0; i < node_depth; i++)
+			fprintf(base_file, "\t");
+
+	}
+	fprintf(base_file, "}");
+
+	return TREE_NO_ERROR;
+}
+
+BinaryTreeStatusCode SaveTreeToBase(Tree* tree) {
+
+	FILE* base_file = fopen(AKINATOR_BASE_, "w");
+	if (!base_file)
+		TREE_ERROR_CHECK(TREE_FILE_OPEN_ERROR);
+
+	WriteNodeToFile(tree->root, base_file);
+
+	printf(GREEN("Changes have been made to the database!")"\n");
+
+	if (fclose(base_file))
+		TREE_ERROR_CHECK(TREE_FILE_CLOSE_ERROR);
+
+	return TREE_NO_ERROR;
+}
+
 static BinaryTreeStatusCode ReadAndCreateNode(Node_t* node, FILE* base_file) {
 
 	if (!node)
 		return TREE_NO_ERROR;
 
+#ifdef GENERATE_BASE_TREE_DUMP
 	static INIT_TREE(tree);
 	tree.root = FindTreeRoot(node);
 
-#ifdef GENERATE_BASE_TREE_DUMP
 	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
 	BINARY_TREE_GRAPH_DUMP(&tree, "ReadAndCreateNode", node);
 #endif

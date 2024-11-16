@@ -3,34 +3,6 @@
 
 static long AMOUNT_OF_LAST_SYMBOLS = 0;
 
-BinaryTreeStatusCode AkinatorRunGame(Tree* tree) {
-
-	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
-
-	PRINTF_HEADER;
-	int c = 0;
-	while ((c = getchar()) != EOF) {
-		if (c != '\n') getchar();
-		else continue;
-		switch (c) {
-			CASE('c', AkinatorComparingMode(tree));
-			CASE('d', AkinatorDefinitionMode(tree));
-			CASE('g', AkinatorGuessingMode(tree));
-			CASE('t', system(OPEN HTML_FILE_));
-			CASE('q', {TREE_DTOR(tree, tree->root);
-					   printf("GG BRO!\n");
-					   return TREE_NO_ERROR;})
-			default: {
-				printf(RED("UNKNOWN COMMAND!") "\n" YELLOW("TRY AGAIN") "\n");
-				break;
-			}
-		}
-		PRINTF_HEADER;
-	}
-
-	return TREE_NO_ERROR;
-}
-
 BinaryTreeStatusCode BinaryTreeHtmlDumpStart() {
 
 	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;

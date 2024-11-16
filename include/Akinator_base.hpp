@@ -11,6 +11,11 @@
 	TREE_ERROR_CHECK(tree_status);				\
 }
 
+#define AKINATOR_SAVE_TREE(tree) { 				 \
+	tree_status = SaveTreeToBase(tree);			\
+	TREE_ERROR_CHECK(tree_status);				\
+}
+
 enum NodeStatus {
 	NODE_STATUS_UNKNOWN,
 	NODE_STATUS_LEAF,
@@ -18,3 +23,5 @@ enum NodeStatus {
 };
 
 BinaryTreeStatusCode AkinatorReadBase(Tree* tree);
+BinaryTreeStatusCode AkinatorRunGame(Tree* tree);
+BinaryTreeStatusCode SaveTreeToBase(Tree* tree);
