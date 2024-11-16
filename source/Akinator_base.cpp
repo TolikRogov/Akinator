@@ -3,14 +3,16 @@
 
 static BinaryTreeStatusCode ReadAndCreateNode(Node_t* node, FILE* base_file) {
 
-	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
-
 	if (!node)
 		return TREE_NO_ERROR;
 
 	static INIT_TREE(tree);
 	tree.root = FindTreeRoot(node);
+
+#ifdef GENERATE_BASE_TREE_DUMP
+	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
 	BINARY_TREE_GRAPH_DUMP(&tree, "ReadAndCreateNode", node);
+#endif
 
 	int bracket = fgetc(base_file);
 	static int bracket_checker = 1;
@@ -88,6 +90,8 @@ static BinaryTreeStatusCode ReadAndCreateNode(Node_t* node, FILE* base_file) {
 
 BinaryTreeStatusCode AkinatorReadBase(Tree* tree) {
 
+	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
+
 	FILE* base_file = fopen(AKINATOR_BASE_, "r");
 	if (!base_file)
 		TREE_ERROR_CHECK(TREE_FILE_OPEN_ERROR);
@@ -105,6 +109,8 @@ BinaryTreeStatusCode AkinatorReadBase(Tree* tree) {
 	fscanf(base_file, "%[^{}]", cur_node);
 
 	ReadAndCreateNode(tree->root, base_file);
+
+	BINARY_TREE_GRAPH_DUMP(tree, "AkinatorReadBase", NULL);
 
 	if (fclose(base_file))
 		TREE_ERROR_CHECK(TREE_FILE_CLOSE_ERROR);

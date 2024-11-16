@@ -9,6 +9,7 @@ set (DEBUG_FLAGS   -std=c++17 -ggdb3 -O3 -Wall -Wextra -Weffc++ -Wc++14-compat -
 set (RELEASE_FLAGS -std=c++17)
 
 set (DEBUG OFF)
+set (BASE_TREE OFF)
 set (UNKNOWN_WHAT OFF)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
@@ -20,6 +21,10 @@ endif()
 if (${UNKNOWN_WHAT})
 	add_compile_definitions(UNKNOWN_WHAT_IN_TREE)
 endif()
+
+if (${BASE_TREE})
+	add_compile_definitions(GENERATE_BASE_TREE_DUMP)
+endif ()
 
 add_executable(${PROJECT_NAME})
 

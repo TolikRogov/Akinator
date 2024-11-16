@@ -18,7 +18,7 @@ typedef char* Data_t;
 	printf("-----------------------------------------------------\n");		\
 }
 
-#define CASE(button, ...) {		 		\
+#define CASE(button, ...) {		 		 \
 	case button: {						\
 		__VA_ARGS__;					\
 		break;							\
@@ -75,6 +75,13 @@ struct TreeLogInfo {
 	const size_t line;
 };
 
+struct DumpLogInfo {
+	const char* file;
+	const size_t line;
+	const char* func;
+	const Node_t* pointer;
+};
+
 struct Tree {
 	Node_t* root;
 	TreeLogInfo info;
@@ -103,6 +110,8 @@ Node_t* FindNodeInTree(Node_t* node, Data_t data);
 size_t NodeDepthInTree(Node_t* node);
 
 BinaryTreeStatusCode CreatePathToNode(Tree* tree, PathArray* path);
+
+BinaryTreeStatusCode BinaryTreeGraphDump(Tree* tree, DumpLogInfo dump_info);
 
 BinaryTreeStatusCode AkinatorComparingMode(Tree* tree);
 BinaryTreeStatusCode AkinatorDefinitionMode(Tree* tree);

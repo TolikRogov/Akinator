@@ -152,12 +152,31 @@ BinaryTreeStatusCode AkinatorGuessingMode(Tree* tree) {
 	return TREE_NO_ERROR;
 }
 
-BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node) {
+BinaryTreeStatusCode AddingNewAnswer(Node_t* node) {
 
-	if (!node) {
-		printf(RED("Sorry, I dont know what you made!")"\n");
-		return TREE_NO_ERROR;
-	}
+	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
+
+	char cur_node[NODE_DATA_MAX_LENGTH] = {};
+	printf(YELLOW("You have in mind:")" ");
+	scanf("%s", cur_node);
+
+	char cur_question[NODE_DATA_MAX_LENGTH] = {};
+	printf(YELLOW("How is \"%s\" different from \"%s\": ")" ", cur_node, node->data);
+	scanf("%s", cur_question);
+
+	if (node == node->parent->left)
+		node->parent->parent->left = CreateNode(cur_question, CreateNode(cur_node, NULL, NULL, NULL), node, node->parent);
+	else
+		node->parent->parent->right = CreateNode(cur_question, CreateNode(cur_node, NULL, NULL, NULL), node, node->parent);
+
+	INIT_TREE(tree);
+	tree.root = FindTreeRoot(node);
+	BINARY_TREE_GRAPH_DUMP(&tree, "AddingNewAnswer", node->parent);
+
+	return TREE_NO_ERROR;
+}
+
+BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node) {
 
 	printf(TEAL("This %s?") " [y/n]\n", node->data);
 	int c = getchar();
@@ -169,8 +188,15 @@ BinaryTreeStatusCode AkinatorAskAboutNode(Node_t* node) {
 		}
 		AkinatorAskAboutNode(node->left);
 	}
-	else if (c == 'n')
+	else if (c == 'n') {
+		if (!node->right) {
+			printf(RED("Sorry, I dont know what you made!")"\n");
+			AddingNewAnswer(node);
+			return TREE_NO_ERROR;
+		}
+
 		AkinatorAskAboutNode(node->right);
+	}
 	else
 		AkinatorAskAboutNode(node);
 

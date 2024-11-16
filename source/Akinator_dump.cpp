@@ -202,7 +202,7 @@ BinaryTreeStatusCode BinaryTreeHtmlDumpFinish() {
 	return TREE_NO_ERROR;
 }
 
-BinaryTreeStatusCode BinaryTreeBashScript(Tree* tree, DumpLogInfo dump_info) {
+BinaryTreeStatusCode BinaryTreeBashScript(Tree* tree, DumpLogInfo* dump_info) {
 
 	static size_t script_num = 1;
 	static struct PrevLogInfo {
@@ -245,7 +245,7 @@ BinaryTreeStatusCode BinaryTreeBashScript(Tree* tree, DumpLogInfo dump_info) {
 					tree, (prev_info.file_name = tree->info.file_name), (prev_info.line = (size_t)tree->info.line), (prev_info.var_name = tree->info.name));
 
 	HTML_PRINTF("\t<div class='dump'>\n");
-	HTML_PRINTF("\tDUMP #%zu: function %s was called from %s: %zu\n", script_num, dump_info.func, dump_info.file, dump_info.line);
+	HTML_PRINTF("\tDUMP #%zu: function %s was called from %s: %zu\n", script_num, dump_info->func, dump_info->file, dump_info->line);
 	HTML_PRINTF("\t<img src='%s%zu.%s' class='img'></div>\n\n", IMG_FILE_, script_num++, IMG_EXTENSION);
 
 #undef HTML_PRINTF
@@ -271,7 +271,7 @@ BinaryTreeStatusCode BinaryTreeGraphDump(Tree* tree, DumpLogInfo dump_info) {
 	DOT_PRINTF("\tfontname = \"UbuntuMono\";\n");
 	DOT_PRINTF("\tbgcolor = %s;\n\n", color.dot_background);
 
-	NodeGraphDump(tree->root, dot_file, dump_info);
+	NodeGraphDump(tree->root, dot_file, &dump_info);
 
 	DOT_PRINTF("}\n");
 
@@ -280,13 +280,13 @@ BinaryTreeStatusCode BinaryTreeGraphDump(Tree* tree, DumpLogInfo dump_info) {
 	if (fclose(dot_file))
 		TREE_ERROR_CHECK(TREE_FILE_CLOSE_ERROR);
 
-	tree_status = BinaryTreeBashScript(tree, dump_info);
+	tree_status = BinaryTreeBashScript(tree, &dump_info);
 	TREE_ERROR_CHECK(tree_status);
 
 	return TREE_NO_ERROR;
 }
 
-BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file, DumpLogInfo dump_info) {
+BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file, DumpLogInfo* dump_info) {
 
 	if (!cur_root)
 		return TREE_NULL_POINTER;
@@ -316,9 +316,9 @@ BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file, DumpLogInfo
 		}
 	}
 
-	if (dump_info.pointer) {
+	if (dump_info->pointer) {
 		DOT_PRINTF("\tnode%p [ fillcolor = %s; color = %s; fontcolor = %s; ];\n",
-				dump_info.pointer, color.new_node, color.new_node_border, color.node_font);
+				dump_info->pointer, color.new_node, color.new_node_border, color.node_font);
 	}
 
 	if (IsRootUnknownWhat(cur_root)) {
