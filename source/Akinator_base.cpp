@@ -5,9 +5,16 @@ BinaryTreeStatusCode AkinatorRunGame(Tree* tree) {
 
 	BinaryTreeStatusCode tree_status = TREE_NO_ERROR;
 
+	sf::SoundBuffer akinator_music;
+	akinator_music.loadFromFile(MUSIC_ BG_MUSIC_);
+
+	sf::Sound background;
+	background.setBuffer(akinator_music);
+
 	PRINTF_HEADER;
 	int c = 0;
 	while ((c = getchar()) != EOF) {
+		background.play();
 		if (c != '\n') getchar();
 		else continue;
 		switch (c) {

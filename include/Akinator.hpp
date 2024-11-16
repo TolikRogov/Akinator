@@ -4,9 +4,13 @@
 #include <dirent.h>
 #include <string.h>
 #include <ctype.h>
+#include <SFML/Audio.hpp>
 #include "Akinator_errors.hpp"
 
 typedef char* Data_t;
+
+#define MUSIC_		"music/"
+#define BG_MUSIC_	"music1.wav"
 
 #define PRINTF_HEADER {														 \
 	printf("\n-----------------------------------------------------\n");	\
